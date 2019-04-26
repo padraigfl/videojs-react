@@ -61412,7 +61412,7 @@
 
       _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(VideoPlayer)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-      _defineProperty(_assertThisInitialized(_this), "videoNode", _this.props.ref);
+      _defineProperty(_assertThisInitialized(_this), "videoNode", _this.videoNode || React.createRef());
 
       return _this;
     }
@@ -61444,13 +61444,13 @@
         var _this$props = this.props,
             setup = _this$props.setup,
             onReadyCheck = _this$props.onReadyCheck,
-            videoRef = _this$props.videoRef,
-            rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "videoRef"]);
+            innerRef = _this$props.innerRef,
+            rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "innerRef"]);
 
         return React.createElement("div", {
           "data-vjs-player": true
         }, React.createElement("video", _extends({}, rest, {
-          ref: videoRef
+          ref: this.videoNode
         })));
       }
     }]);
@@ -61473,7 +61473,13 @@
     }
   });
 
-  return VideoPlayer;
+  var Video = React.forwardRef(function (props, ref) {
+    return React.createElement(VideoPlayer, _extends({
+      innerRef: ref
+    }, props));
+  });
+
+  return Video;
 
 }));
 //# sourceMappingURL=index.js.map

@@ -2,7 +2,7 @@ import React from 'react';
 import videojs from 'video.js';
 import 'videojs-youtube';
 
-export default class VideoPlayer extends React.Component {
+class VideoPlayer extends React.Component {
   static defaultProps = {
     id: 'vid1',
     className: 'video-js vjs-default-skin',
@@ -20,7 +20,7 @@ export default class VideoPlayer extends React.Component {
     }
   };
 
-  videoNode = this.props.ref;
+  videoNode = this.videoNode || React.createRef();
 
   componentDidMount() {
     // instantiate Video.js
@@ -42,11 +42,17 @@ export default class VideoPlayer extends React.Component {
   // so videojs won't create additional wrapper in the DOM
   // see https://github.com/videojs/video.js/pull/3856
   render() {
-    const { setup, onReadyCheck, videoRef, ...rest } = this.props;
+    const { setup, onReadyCheck, innerRef, ...rest } = this.props;
     return (
       <div data-vjs-player>
-        <video {...rest} ref={videoRef} />
+        <video {...rest} ref={this.videoNode} />
       </div>
     );
   }
 }
+
+const Video = React.forwardRef((props, ref) => (
+  <VideoPlayer innerRef={ref} {...props} />
+));
+
+export default Video;
