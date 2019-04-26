@@ -38,4 +38,4 @@ To use default videojs styles you must still import their CSS files.
 
 ## Todo
 
-Only import videojs if needed, as it's huge and may be a global thing on a cdn
+Handle videojs importing as a fallback

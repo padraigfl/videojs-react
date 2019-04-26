@@ -1,7 +1,7 @@
 {
-  "name": "videojs-coursebuilder",
+  "name": "videojs-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "videojs based react component",
   "main": "dist/index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
