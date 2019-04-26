@@ -8,7 +8,7 @@ export default class VideoPlayer extends React.Component {
     className: 'video-js vjs-default-skin',
     width: '640',
     height: '264',
-    ref: React.createRef(),
+    videoRef: React.createRef(),
     setup: {
       techOrder: ['youtube'],
       sources: [
@@ -42,10 +42,10 @@ export default class VideoPlayer extends React.Component {
   // so videojs won't create additional wrapper in the DOM
   // see https://github.com/videojs/video.js/pull/3856
   render() {
-    const { setup, onReadyCheck, ...rest } = this.props;
+    const { setup, onReadyCheck, videoRef, ...rest } = this.props;
     return (
       <div data-vjs-player>
-        <video {...rest} />
+        <video {...rest} ref={videoRef} />
       </div>
     );
   }

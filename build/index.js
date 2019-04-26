@@ -43,6 +43,24 @@
     return obj;
   }
 
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
   function _inherits(subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
       throw new TypeError("Super expression must either be null or a function");
@@ -4136,8 +4154,8 @@
   });
 
   /*! @name m3u8-parser @version 4.3.0 @license Apache-2.0 */
-  function _extends() {
-    _extends = Object.assign || function (target) {
+  function _extends$1() {
+    _extends$1 = Object.assign || function (target) {
       for (var i = 1; i < arguments.length; i++) {
         var source = arguments[i];
 
@@ -4151,7 +4169,7 @@
       return target;
     };
 
-    return _extends.apply(this, arguments);
+    return _extends$1.apply(this, arguments);
   }
 
   function _inheritsLoose(subClass, superClass) {
@@ -5187,7 +5205,7 @@
                   currentUri.attributes = {};
                 }
 
-                _extends(currentUri.attributes, entry.attributes);
+                _extends$1(currentUri.attributes, entry.attributes);
               },
               media: function media() {
                 this.manifest.mediaGroups = this.manifest.mediaGroups || defaultMediaGroups;
@@ -61426,11 +61444,14 @@
         var _this$props = this.props,
             setup = _this$props.setup,
             onReadyCheck = _this$props.onReadyCheck,
-            rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck"]);
+            videoRef = _this$props.videoRef,
+            rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "videoRef"]);
 
         return React.createElement("div", {
           "data-vjs-player": true
-        }, React.createElement("video", rest));
+        }, React.createElement("video", _extends({}, rest, {
+          ref: videoRef
+        })));
       }
     }]);
 
@@ -61442,7 +61463,7 @@
     className: 'video-js vjs-default-skin',
     width: '640',
     height: '264',
-    ref: React.createRef(),
+    videoRef: React.createRef(),
     setup: {
       techOrder: ['youtube'],
       sources: [{
