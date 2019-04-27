@@ -61406,7 +61406,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(VideoPlayer)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "videoNode", _this.videoNode || React.createRef());
+    _defineProperty(_assertThisInitialized(_this), "videoNode", _this.props.innerRef);
 
     return _this;
   }
@@ -61417,9 +61417,10 @@ function (_React$Component) {
       var _this2 = this;
 
       // instantiate Video.js
-      this.player = videojs$1(this.videoNode.current, this.props.dataSetup, this.props.onReadyCheck ? function () {
+      this.player = videojs$1(this.videoNode.current, this.props.setup, this.props.onReadyCheck ? function () {
         return _this2.props.onReadyCheck(_this2);
       } : undefined);
+      debugger;
     } // destroy player on unmount
 
   }, {
@@ -61435,6 +61436,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
+
       var _this$props = this.props,
           setup = _this$props.setup,
           onReadyCheck = _this$props.onReadyCheck,
@@ -61457,21 +61460,15 @@ _defineProperty(VideoPlayer, "defaultProps", {
   className: 'video-js vjs-default-skin',
   width: '640',
   height: '264',
-  videoRef: React.createRef(),
   setup: {
     techOrder: ['youtube'],
     sources: [{
       type: 'video/youtube',
       src: 'https://www.youtube.com/watch?v=TeccAtqd5K8'
     }]
-  }
+  },
+  innerRef: React.createRef()
 });
 
-var Video = React.forwardRef(function (props, ref) {
-  return React.createElement(VideoPlayer, _extends({
-    innerRef: ref
-  }, props));
-});
-
-export default Video;
+export default VideoPlayer;
 //# sourceMappingURL=index.module.js.map

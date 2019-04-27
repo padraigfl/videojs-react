@@ -30,12 +30,18 @@
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.7.1",
     "prettier": "^1.17.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-test-renderer": "^16.8.6",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-replace": "^2.2.0"
+  },
+  "peerDependencies": {
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -46,8 +52,6 @@
   },
   "precommit": "NODE_ENV=production ./node_modules/.bin/lint-staged",
   "dependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
     "video.js": "^7.5.4",
     "videojs-youtube": "^2.6.0"
   }
