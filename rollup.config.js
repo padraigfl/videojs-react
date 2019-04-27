@@ -17,7 +17,12 @@ export default {
   output: [
     {
       ...moduleOptions,
-      dir: 'build',
+      file: './build/index.js',
+      format: 'umd'
+    },
+    {
+      ...moduleOptions,
+      file: 'build/index.module.js',
       format: 'es'
     }
   ],

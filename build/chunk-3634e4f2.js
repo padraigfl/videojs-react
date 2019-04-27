@@ -1,8 +1,0 @@
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-export { commonjsGlobal as a, createCommonjsModule as b };
-//# sourceMappingURL=chunk-3634e4f2.js.map

@@ -22,17 +22,14 @@ class VideoPlayer extends React.Component {
 
   actions = {};
 
-  /* TODO
-   * Fallbacks do not currently work
-   * videojs-youtube defaults to a different version of video.js than imported
-   */
+
   componentDidMount() {
-    if (videojs) {
-      this.instantiate();
-    } else if (!videojs.getTech('youtube')) {
-      this.youtubeFallback();
+    if (!videojs) {
+      this.setState({ noVideoJs: 'videojs' })
+    } else if (this.needsYoutube() && !this.hasYoutube()) {
+      this.setState({ noVideoJs: 'youtube' })
     } else {
-      this.videoJsFallback();
+      this.instantiate();
     }
   }
 
@@ -43,15 +40,25 @@ class VideoPlayer extends React.Component {
     }
   }
 
-  videoJsFallback = () => import('video.js').then(this.youtubeFallback);
+  needsYoutube = () => this.props.youtube || this.props.setup.techOrder.find(tech => tech.toLowerCase === 'youtube');
 
-  youtubeFallback = () => {
-    if (this.props.youtube || this.props.setup.techOrder.find(tech => tech.toLowerCase === 'youtube')) {
-      import('videojs-youtube').then(() => {
-        this.instantiate();
-      });
-    }
-  };
+
+  hasYoutube = () => videojs && videojs.getTech('youtube')
+
+  /* TODO
+  * Fallbacks do not currently work
+  * videojs-youtube defaults to a different version of video.js than imported
+  */
+
+  // videoJsFallback = () => import('video.js').then(this.youtubeFallback);
+
+  // youtubeFallback = () => {
+  //   if (this.props.youtube || this.props.setup.techOrder.find(tech => tech.toLowerCase === 'youtube')) {
+  //     import('videojs-youtube').then(() => {
+  //       this.instantiate();
+  //     });
+  //   }
+  // };
 
   instantiate = () => {
     this.player = videojs(
@@ -59,10 +66,14 @@ class VideoPlayer extends React.Component {
       this.props.setup,
       this.props.onReadyCheck ? () => this.props.onReadyCheck(this) : undefined
     );
+    this.mapControls();
+  };
+
+  mapControls = () => {
     Object.keys(this.props.controls).forEach(key => {
       this.player.on([key], this.props.controls[key]);
     });
-  };
+  }
 
   // wrap the player in a div with a `data-vjs-player` attribute
   // so videojs won't create additional wrapper in the DOM
