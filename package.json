@@ -2,8 +2,7 @@
   "name": "videojs-react",
   "version": "1.0.0",
   "description": "videojs based react component",
-  "main": "build/index.js",
-  "module": "build/index.module.js",
+  "module": "build/index.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
     "lint": "./node_modules/.bin/eslint src/ ",
@@ -16,6 +15,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
@@ -37,11 +37,13 @@
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.3",
-    "rollup-plugin-replace": "^2.2.0"
+    "rollup-plugin-replace": "^2.2.0",
+    "video.js": "^7.5.4",
+    "videojs-youtube": "^2.6.0"
   },
   "peerDependencies": {
-    "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "video.js": "^7.5.4",
+    "videojs-youtube": "^2.6.0"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -50,9 +52,5 @@
       "git add"
     ]
   },
-  "precommit": "NODE_ENV=production ./node_modules/.bin/lint-staged",
-  "dependencies": {
-    "video.js": "^7.5.4",
-    "videojs-youtube": "^2.6.0"
-  }
+  "precommit": "NODE_ENV=production ./node_modules/.bin/lint-staged"
 }

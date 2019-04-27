@@ -1,155 +1,11 @@
-import React from 'react';
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
+import { a as commonjsGlobal$1, b as createCommonjsModule$1 } from './chunk-3634e4f2.js';
 
 var win;
 
 if (typeof window !== "undefined") {
     win = window;
-} else if (typeof commonjsGlobal !== "undefined") {
-    win = commonjsGlobal;
+} else if (typeof commonjsGlobal$1 !== "undefined") {
+    win = commonjsGlobal$1;
 } else if (typeof self !== "undefined"){
     win = self;
 } else {
@@ -750,7 +606,7 @@ proto.dispatchEvent = dispatchEvent_1;
 
 var minDocument = new document$1();
 
-var topLevel = typeof commonjsGlobal !== 'undefined' ? commonjsGlobal :
+var topLevel = typeof commonjsGlobal$1 !== 'undefined' ? commonjsGlobal$1 :
     typeof window !== 'undefined' ? window : {};
 
 
@@ -798,7 +654,7 @@ function SafeParseTuple(obj, reviver) {
     return [error, json]
 }
 
-var keycode = createCommonjsModule(function (module, exports) {
+var keycode = createCommonjsModule$1(function (module, exports) {
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
@@ -3932,7 +3788,7 @@ function VTTRegion() {
 
 var vttregion = VTTRegion;
 
-var browserIndex = createCommonjsModule(function (module) {
+var browserIndex = createCommonjsModule$1(function (module) {
 /**
  * Copyright 2013 vtt.js Contributors
  *
@@ -3988,7 +3844,7 @@ var browserIndex_1 = browserIndex.WebVTT;
 var browserIndex_2 = browserIndex.VTTCue;
 var browserIndex_3 = browserIndex.VTTRegion;
 
-var urlToolkit = createCommonjsModule(function (module, exports) {
+var urlToolkit = createCommonjsModule$1(function (module, exports) {
 // see https://tools.ietf.org/html/rfc1808
 
 /* jshint ignore:start */
@@ -4143,13 +3999,13 @@ var urlToolkit = createCommonjsModule(function (module, exports) {
 
 /* jshint ignore:start */
   module.exports = URLToolkit;
-})(commonjsGlobal);
+})(commonjsGlobal$1);
 /* jshint ignore:end */
 });
 
 /*! @name m3u8-parser @version 4.3.0 @license Apache-2.0 */
-function _extends$1() {
-  _extends$1 = Object.assign || function (target) {
+function _extends() {
+  _extends = Object.assign || function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -4163,7 +4019,7 @@ function _extends$1() {
     return target;
   };
 
-  return _extends$1.apply(this, arguments);
+  return _extends.apply(this, arguments);
 }
 
 function _inheritsLoose(subClass, superClass) {
@@ -4172,7 +4028,7 @@ function _inheritsLoose(subClass, superClass) {
   subClass.__proto__ = superClass;
 }
 
-function _assertThisInitialized$1(self) {
+function _assertThisInitialized(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
@@ -5009,7 +4865,7 @@ function (_Stream) {
     /* eslint-disable consistent-this */
 
 
-    var self = _assertThisInitialized$1(_assertThisInitialized$1(_this));
+    var self = _assertThisInitialized(_assertThisInitialized(_this));
     /* eslint-enable consistent-this */
 
 
@@ -5199,7 +5055,7 @@ function (_Stream) {
                 currentUri.attributes = {};
               }
 
-              _extends$1(currentUri.attributes, entry.attributes);
+              _extends(currentUri.attributes, entry.attributes);
             },
             media: function media() {
               this.manifest.mediaGroups = this.manifest.mediaGroups || defaultMediaGroups;
@@ -5697,13 +5553,13 @@ var toM3u8 = function toM3u8(dashPlaylists) {
   return master;
 };
 
-var commonjsGlobal$1 = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-function createCommonjsModule$1(fn, module) {
+function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
 
-var urlToolkit$1 = createCommonjsModule$1(function (module, exports) {
+var urlToolkit$1 = createCommonjsModule(function (module, exports) {
 // see https://tools.ietf.org/html/rfc1808
 
 /* jshint ignore:start */
@@ -5858,7 +5714,7 @@ var urlToolkit$1 = createCommonjsModule$1(function (module, exports) {
 
 /* jshint ignore:start */
   module.exports = URLToolkit;
-})(commonjsGlobal$1);
+})(commonjsGlobal);
 /* jshint ignore:end */
 });
 
@@ -15546,13 +15402,13 @@ function _inheritsLoose$1(subClass, superClass) {
   subClass.__proto__ = superClass;
 }
 
-function _setPrototypeOf$1(o, p) {
-  _setPrototypeOf$1 = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
 
-  return _setPrototypeOf$1(o, p);
+  return _setPrototypeOf(o, p);
 }
 
 function isNativeReflectConstruct() {
@@ -15577,7 +15433,7 @@ function _construct(Parent, args, Class) {
       a.push.apply(a, args);
       var Constructor = Function.bind.apply(Parent, a);
       var instance = new Constructor();
-      if (Class) _setPrototypeOf$1(instance, Class.prototype);
+      if (Class) _setPrototypeOf(instance, Class.prototype);
       return instance;
     };
   }
@@ -15585,7 +15441,7 @@ function _construct(Parent, args, Class) {
   return _construct.apply(null, arguments);
 }
 
-function _assertThisInitialized$2(self) {
+function _assertThisInitialized$1(self) {
   if (self === void 0) {
     throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
   }
@@ -21483,7 +21339,7 @@ function (_EventTarget) {
      * @instance
      */
 
-    Object.defineProperty(_assertThisInitialized$2(_assertThisInitialized$2(_this)), 'length', {
+    Object.defineProperty(_assertThisInitialized$1(_assertThisInitialized$1(_this)), 'length', {
       get: function get() {
         return this.tracks_.length;
       }
@@ -21821,7 +21677,7 @@ function (_TrackList) {
      *         The current index of the selected {@link VideoTrack`}.
      */
 
-    Object.defineProperty(_assertThisInitialized$2(_assertThisInitialized$2(_this)), 'selectedIndex', {
+    Object.defineProperty(_assertThisInitialized$1(_assertThisInitialized$1(_this)), 'selectedIndex', {
       get: function get() {
         for (var _i = 0; _i < this.length; _i++) {
           if (this[_i].selected) {
@@ -22360,7 +22216,7 @@ function (_EventTarget) {
      */
 
     var _loop = function _loop(key) {
-      Object.defineProperty(_assertThisInitialized$2(_assertThisInitialized$2(_this)), key, {
+      Object.defineProperty(_assertThisInitialized$1(_assertThisInitialized$1(_this)), key, {
         get: function get() {
           return trackProps[key];
         },
@@ -22725,7 +22581,7 @@ function (_Track) {
     var cues = new TextTrackCueList(_this.cues_);
     var activeCues = new TextTrackCueList(_this.activeCues_);
     var changed = false;
-    var timeupdateHandler = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), function () {
+    var timeupdateHandler = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), function () {
       // Accessing this.activeCues for the side-effects of updating itself
       // due to its nature as a getter function. Do not remove or cues will
       // stop updating!
@@ -22744,7 +22600,7 @@ function (_Track) {
       }, true);
     }
 
-    Object.defineProperties(_assertThisInitialized$2(_assertThisInitialized$2(_this)), {
+    Object.defineProperties(_assertThisInitialized$1(_assertThisInitialized$1(_this)), {
       /**
        * @memberof TextTrack
        * @member {boolean} default
@@ -22875,7 +22731,7 @@ function (_Track) {
 
     if (settings.src) {
       _this.src = settings.src;
-      loadTrack(settings.src, _assertThisInitialized$2(_assertThisInitialized$2(_this)));
+      loadTrack(settings.src, _assertThisInitialized$1(_assertThisInitialized$1(_this)));
     } else {
       _this.loaded_ = true;
     }
@@ -23010,7 +22866,7 @@ function (_Track) {
      * @fires VideoTrack#selectedchange
      */
 
-    Object.defineProperty(_assertThisInitialized$2(_assertThisInitialized$2(_this)), 'enabled', {
+    Object.defineProperty(_assertThisInitialized$1(_assertThisInitialized$1(_this)), 'enabled', {
       get: function get() {
         return enabled;
       },
@@ -23104,7 +22960,7 @@ function (_Track) {
      * @fires VideoTrack#selectedchange
      */
 
-    Object.defineProperty(_assertThisInitialized$2(_assertThisInitialized$2(_this)), 'selected', {
+    Object.defineProperty(_assertThisInitialized$1(_assertThisInitialized$1(_this)), 'selected', {
       get: function get() {
         return selected;
       },
@@ -23213,7 +23069,7 @@ function (_EventTarget) {
     _this.srclang = track.language;
     _this.label = track.label;
     _this.default = track.default;
-    Object.defineProperties(_assertThisInitialized$2(_assertThisInitialized$2(_this)), {
+    Object.defineProperties(_assertThisInitialized$1(_assertThisInitialized$1(_this)), {
       /**
        * @memberof HTMLTrackElement
        * @member {HTMLTrackElement~ReadyState} readyState
@@ -23250,7 +23106,7 @@ function (_EventTarget) {
 
       _this.trigger({
         type: 'load',
-        target: _assertThisInitialized$2(_assertThisInitialized$2(_this))
+        target: _assertThisInitialized$1(_assertThisInitialized$1(_this))
       });
     });
     return _this;
@@ -25549,7 +25405,7 @@ function (_ClickableComponent) {
 
     _this.update();
 
-    player.on('posterchange', bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.update));
+    player.on('posterchange', bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.update));
     return _this;
   }
   /**
@@ -25747,15 +25603,15 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options, ready) || this;
-    var updateDisplayHandler = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.updateDisplay);
-    player.on('loadstart', bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.toggleDisplay));
+    var updateDisplayHandler = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.updateDisplay);
+    player.on('loadstart', bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.toggleDisplay));
     player.on('texttrackchange', updateDisplayHandler);
-    player.on('loadedmetadata', bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.preselectTrack)); // This used to be called during player init, but was causing an error
+    player.on('loadedmetadata', bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.preselectTrack)); // This used to be called during player init, but was causing an error
     // if a track should show by default and the display hadn't loaded yet.
     // Should probably be moved to an external track loader when we support
     // tracks that don't need a display.
 
-    player.ready(bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), function () {
+    player.ready(bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), function () {
       if (player.tech_ && player.tech_.featuresNativeTextTracks) {
         this.hide();
         return;
@@ -26667,7 +26523,7 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.throttledUpdateContent = throttle(bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.updateContent), 25);
+    _this.throttledUpdateContent = throttle(bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.updateContent), 25);
 
     _this.on(player, 'timeupdate', _this.throttledUpdateContent);
 
@@ -28114,7 +27970,7 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.update = throttle(bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.update), 25);
+    _this.update = throttle(bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.update), 25);
     return _this;
   }
   /**
@@ -28643,8 +28499,8 @@ function (_Component) {
     var _this;
 
     _this = _Component.call(this, player, options) || this;
-    _this.handleMouseMove = throttle(bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleMouseMove), 25);
-    _this.throttledHandleMouseSeek = throttle(bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleMouseSeek), 25);
+    _this.handleMouseMove = throttle(bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleMouseMove), 25);
+    _this.throttledHandleMouseSeek = throttle(bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleMouseSeek), 25);
 
     _this.enable();
 
@@ -29237,8 +29093,8 @@ function (_Component) {
 
     _this = _Component.call(this, player, options) || this; // hide this control if volume support is missing
 
-    checkVolumeSupport(_assertThisInitialized$2(_assertThisInitialized$2(_this)), player);
-    _this.throttledHandleMouseMove = throttle(bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleMouseMove), 25);
+    checkVolumeSupport(_assertThisInitialized$1(_assertThisInitialized$1(_this)), player);
+    _this.throttledHandleMouseMove = throttle(bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleMouseMove), 25);
 
     _this.on('mousedown', _this.handleMouseDown);
 
@@ -29403,7 +29259,7 @@ function (_Button) {
 
     _this = _Button.call(this, player, options) || this; // hide this control if volume support is missing
 
-    checkMuteSupport(_assertThisInitialized$2(_assertThisInitialized$2(_this)), player);
+    checkMuteSupport(_assertThisInitialized$1(_assertThisInitialized$1(_this)), player);
 
     _this.on(player, ['loadstart', 'volumechange'], _this.update);
 
@@ -29703,8 +29559,8 @@ function (_Component) {
     _this.on('keydown', _this.handleKeyPress); // All the menu item instances share the same blur handler provided by the menu container.
 
 
-    _this.boundHandleBlur_ = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleBlur);
-    _this.boundHandleTapClick_ = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleTapClick);
+    _this.boundHandleBlur_ = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleBlur);
+    _this.boundHandleTapClick_ = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleTapClick);
     return _this;
   }
   /**
@@ -30400,10 +30256,10 @@ function (_MenuButton) {
     }
 
     if (!tracks) {
-      return _assertThisInitialized$2(_this);
+      return _assertThisInitialized$1(_this);
     }
 
-    var updateHandler = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.update);
+    var updateHandler = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.update);
     tracks.addEventListener('removetrack', updateHandler);
     tracks.addEventListener('addtrack', updateHandler);
 
@@ -30609,7 +30465,7 @@ function (_MenuItem) {
         args[_key] = arguments[_key];
       }
 
-      _this.handleTracksChange.apply(_assertThisInitialized$2(_assertThisInitialized$2(_this)), args);
+      _this.handleTracksChange.apply(_assertThisInitialized$1(_assertThisInitialized$1(_this)), args);
     };
 
     var selectedLanguageChangeHandler = function selectedLanguageChangeHandler() {
@@ -30617,7 +30473,7 @@ function (_MenuItem) {
         args[_key2] = arguments[_key2];
       }
 
-      _this.handleSelectedLanguageChange.apply(_assertThisInitialized$2(_assertThisInitialized$2(_this)), args);
+      _this.handleSelectedLanguageChange.apply(_assertThisInitialized$1(_assertThisInitialized$1(_this)), args);
     };
 
     player.on(['loadstart', 'texttrackchange'], changeHandler);
@@ -30990,7 +30846,7 @@ function (_MenuItem) {
     _this = _MenuItem.call(this, player, options) || this;
     _this.track = track;
     _this.cue = cue;
-    track.addEventListener('cuechange', bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.update));
+    track.addEventListener('cuechange', bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.update));
     return _this;
   }
   /**
@@ -31271,7 +31127,7 @@ function (_TextTrackButton) {
 
     _this = _TextTrackButton.call(this, player, options, ready) || this;
     var tracks = player.textTracks();
-    var changeHandler = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleTracksChange);
+    var changeHandler = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleTracksChange);
     tracks.addEventListener('change', changeHandler);
 
     _this.on('dispose', function () {
@@ -31734,7 +31590,7 @@ function (_MenuItem) {
         args[_key] = arguments[_key];
       }
 
-      _this.handleTracksChange.apply(_assertThisInitialized$2(_assertThisInitialized$2(_this)), args);
+      _this.handleTracksChange.apply(_assertThisInitialized$1(_assertThisInitialized$1(_this)), args);
     };
 
     tracks.addEventListener('change', changeHandler);
@@ -32591,7 +32447,7 @@ function (_ModalDialog) {
 
     options.temporary = false;
     _this = _ModalDialog.call(this, player, options) || this;
-    _this.updateDisplay = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.updateDisplay); // fill the modal and pretend we have opened it
+    _this.updateDisplay = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.updateDisplay); // fill the modal and pretend we have opened it
 
     _this.fill();
 
@@ -32961,7 +32817,7 @@ function (_Component) {
     _this.resizeObserver_ = null;
     _this.debouncedHandler_ = debounce(function () {
       _this.resizeHandler();
-    }, 100, false, _assertThisInitialized$2(_assertThisInitialized$2(_this)));
+    }, 100, false, _assertThisInitialized$1(_assertThisInitialized$1(_this)));
 
     if (RESIZE_OBSERVER_AVAILABLE) {
       _this.resizeObserver_ = new _this.ResizeObserver(_this.debouncedHandler_);
@@ -35871,9 +35727,9 @@ function (_Component) {
 
     _this = _Component.call(this, null, options, ready) || this; // Create bound methods for document listeners.
 
-    _this.boundDocumentFullscreenChange_ = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.documentFullscreenChange_);
-    _this.boundFullWindowOnEscKey_ = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.fullWindowOnEscKey);
-    _this.boundHandleKeyPress_ = bind(_assertThisInitialized$2(_assertThisInitialized$2(_this)), _this.handleKeyPress); // create logger
+    _this.boundDocumentFullscreenChange_ = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.documentFullscreenChange_);
+    _this.boundFullWindowOnEscKey_ = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.fullWindowOnEscKey);
+    _this.boundHandleKeyPress_ = bind(_assertThisInitialized$1(_assertThisInitialized$1(_this)), _this.handleKeyPress); // create logger
 
     _this.log = createLogger$1(_this.id_); // Tracks when a tech changes the poster
 
@@ -35954,7 +35810,7 @@ function (_Component) {
     _this.scrubbing_ = false;
     _this.el_ = _this.createEl(); // Make this an evented object and use `el_` as its event bus.
 
-    evented(_assertThisInitialized$2(_assertThisInitialized$2(_this)), {
+    evented(_assertThisInitialized$1(_assertThisInitialized$1(_this)), {
       eventBusKey: 'el_'
     });
 
@@ -36021,7 +35877,7 @@ function (_Component) {
     } // Make player easily findable by ID
 
 
-    Player.players[_this.id_] = _assertThisInitialized$2(_assertThisInitialized$2(_this)); // Add a major version class to aid css in plugins
+    Player.players[_this.id_] = _assertThisInitialized$1(_assertThisInitialized$1(_this)); // Add a major version class to aid css in plugins
 
     var majorVersion = version.split('.')[0];
 
@@ -60599,876 +60455,5 @@ if (videojs$1.registerPlugin) {
   videojs$1.plugin('reloadSourceOnError', reloadSourceOnError);
 }
 
-var Youtube = createCommonjsModule(function (module, exports) {
-/* The MIT License (MIT)
-
-Copyright (c) 2014-2015 Benoit Tremblay <trembl.ben@gmail.com>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE. */
-/*global define, YT*/
-(function (root, factory) {
-  {
-    var videojs = videojs$1;
-    module.exports = factory(videojs.default || videojs);
-  }
-}(commonjsGlobal, function(videojs) {
-
-  var _isOnMobile = videojs.browser.IS_IOS || videojs.browser.IS_NATIVE_ANDROID;
-  var Tech = videojs.getTech('Tech');
-
-  var Youtube = videojs.extend(Tech, {
-
-    constructor: function(options, ready) {
-      Tech.call(this, options, ready);
-
-      this.setPoster(options.poster);
-      this.setSrc(this.options_.source, true);
-
-      // Set the vjs-youtube class to the player
-      // Parent is not set yet so we have to wait a tick
-      this.setTimeout(function() {
-        if (this.el_) {
-          this.el_.parentNode.className += ' vjs-youtube';
-
-          if (_isOnMobile) {
-            this.el_.parentNode.className += ' vjs-youtube-mobile';
-          }
-
-          if (Youtube.isApiReady) {
-            this.initYTPlayer();
-          } else {
-            Youtube.apiReadyQueue.push(this);
-          }
-        }
-      }.bind(this));
-    },
-
-    dispose: function() {
-      if (this.ytPlayer) {
-        //Dispose of the YouTube Player
-        if (this.ytPlayer.stopVideo) {
-          this.ytPlayer.stopVideo();
-        }
-        if (this.ytPlayer.destroy) {
-          this.ytPlayer.destroy();
-        }
-      } else {
-        //YouTube API hasn't finished loading or the player is already disposed
-        var index = Youtube.apiReadyQueue.indexOf(this);
-        if (index !== -1) {
-          Youtube.apiReadyQueue.splice(index, 1);
-        }
-      }
-      this.ytPlayer = null;
-
-      this.el_.parentNode.className = this.el_.parentNode.className
-        .replace(' vjs-youtube', '')
-        .replace(' vjs-youtube-mobile', '');
-      this.el_.parentNode.removeChild(this.el_);
-
-      //Needs to be called after the YouTube player is destroyed, otherwise there will be a null reference exception
-      Tech.prototype.dispose.call(this);
-    },
-
-    createEl: function() {
-      var div = document.createElement('div');
-      div.setAttribute('id', this.options_.techId);
-      div.setAttribute('style', 'width:100%;height:100%;top:0;left:0;position:absolute');
-      div.setAttribute('class', 'vjs-tech');
-
-      var divWrapper = document.createElement('div');
-      divWrapper.appendChild(div);
-
-      if (!_isOnMobile && !this.options_.ytControls) {
-        var divBlocker = document.createElement('div');
-        divBlocker.setAttribute('class', 'vjs-iframe-blocker');
-        divBlocker.setAttribute('style', 'position:absolute;top:0;left:0;width:100%;height:100%');
-
-        // In case the blocker is still there and we want to pause
-        divBlocker.onclick = function() {
-          this.pause();
-        }.bind(this);
-
-        divWrapper.appendChild(divBlocker);
-      }
-
-      return divWrapper;
-    },
-
-    initYTPlayer: function() {
-      var playerVars = {
-        controls: 0,
-        modestbranding: 1,
-        rel: 0,
-        showinfo: 0,
-        loop: this.options_.loop ? 1 : 0
-      };
-
-      // Let the user set any YouTube parameter
-      // https://developers.google.com/youtube/player_parameters?playerVersion=HTML5#Parameters
-      // To use YouTube controls, you must use ytControls instead
-      // To use the loop or autoplay, use the video.js settings
-
-      if (typeof this.options_.autohide !== 'undefined') {
-        playerVars.autohide = this.options_.autohide;
-      }
-
-      if (typeof this.options_['cc_load_policy'] !== 'undefined') {
-        playerVars['cc_load_policy'] = this.options_['cc_load_policy'];
-      }
-
-      if (typeof this.options_.ytControls !== 'undefined') {
-        playerVars.controls = this.options_.ytControls;
-      }
-
-      if (typeof this.options_.disablekb !== 'undefined') {
-        playerVars.disablekb = this.options_.disablekb;
-      }
-
-      if (typeof this.options_.color !== 'undefined') {
-        playerVars.color = this.options_.color;
-      }
-
-      if (!playerVars.controls) {
-        // Let video.js handle the fullscreen unless it is the YouTube native controls
-        playerVars.fs = 0;
-      } else if (typeof this.options_.fs !== 'undefined') {
-        playerVars.fs = this.options_.fs;
-      }
-
-      if (this.options_.source.src.indexOf('end=') !== -1) {
-        var srcEndTime = this.options_.source.src.match(/end=([0-9]*)/);
-        this.options_.end = parseInt(srcEndTime[1]);
-      }
-
-      if (typeof this.options_.end !== 'undefined') {
-        playerVars.end = this.options_.end;
-      }
-
-      if (typeof this.options_.hl !== 'undefined') {
-        playerVars.hl = this.options_.hl;
-      } else if (typeof this.options_.language !== 'undefined') {
-        // Set the YouTube player on the same language than video.js
-        playerVars.hl = this.options_.language.substr(0, 2);
-      }
-
-      if (typeof this.options_['iv_load_policy'] !== 'undefined') {
-        playerVars['iv_load_policy'] = this.options_['iv_load_policy'];
-      }
-
-      if (typeof this.options_.list !== 'undefined') {
-        playerVars.list = this.options_.list;
-      } else if (this.url && typeof this.url.listId !== 'undefined') {
-        playerVars.list = this.url.listId;
-      }
-
-      if (typeof this.options_.listType !== 'undefined') {
-        playerVars.listType = this.options_.listType;
-      }
-
-      if (typeof this.options_.modestbranding !== 'undefined') {
-        playerVars.modestbranding = this.options_.modestbranding;
-      }
-
-      if (typeof this.options_.playlist !== 'undefined') {
-        playerVars.playlist = this.options_.playlist;
-      }
-
-      if (typeof this.options_.playsinline !== 'undefined') {
-        playerVars.playsinline = this.options_.playsinline;
-      }
-
-      if (typeof this.options_.rel !== 'undefined') {
-        playerVars.rel = this.options_.rel;
-      }
-
-      if (typeof this.options_.showinfo !== 'undefined') {
-        playerVars.showinfo = this.options_.showinfo;
-      }
-
-      if (this.options_.source.src.indexOf('start=') !== -1) {
-        var srcStartTime = this.options_.source.src.match(/start=([0-9]*)/);
-        this.options_.start = parseInt(srcStartTime[1]);
-      }
-
-      if (typeof this.options_.start !== 'undefined') {
-        playerVars.start = this.options_.start;
-      }
-
-      if (typeof this.options_.theme !== 'undefined') {
-        playerVars.theme = this.options_.theme;
-      }
-
-      // Allow undocumented options to be passed along via customVars
-      if (typeof this.options_.customVars !== 'undefined') {
-        var customVars = this.options_.customVars;
-        Object.keys(customVars).forEach(function(key) {
-          playerVars[key] = customVars[key];
-        });
-      }
-
-      this.activeVideoId = this.url ? this.url.videoId : null;
-      this.activeList = playerVars.list;
-
-      var playerConfig = {
-        videoId: this.activeVideoId,
-        playerVars: playerVars,
-        events: {
-          onReady: this.onPlayerReady.bind(this),
-          onPlaybackQualityChange: this.onPlayerPlaybackQualityChange.bind(this),
-          onPlaybackRateChange: this.onPlayerPlaybackRateChange.bind(this),
-          onStateChange: this.onPlayerStateChange.bind(this),
-          onVolumeChange: this.onPlayerVolumeChange.bind(this),
-          onError: this.onPlayerError.bind(this)
-        }
-      };
-
-      if (typeof this.options_.enablePrivacyEnhancedMode !== 'undefined' && this.options_.enablePrivacyEnhancedMode) {
-        playerConfig.host = 'https://www.youtube-nocookie.com';
-      }
-
-      this.ytPlayer = new YT.Player(this.options_.techId, playerConfig);
-    },
-
-    onPlayerReady: function() {
-      if (this.options_.muted) {
-        this.ytPlayer.mute();
-      }
-
-      var playbackRates = this.ytPlayer.getAvailablePlaybackRates();
-      if (playbackRates.length > 1) {
-        this.featuresPlaybackRate = true;
-      }
-
-      this.playerReady_ = true;
-      this.triggerReady();
-
-      if (this.playOnReady) {
-        this.play();
-      } else if (this.cueOnReady) {
-        this.cueVideoById_(this.url.videoId);
-        this.activeVideoId = this.url.videoId;
-      }
-    },
-
-    onPlayerPlaybackQualityChange: function() {
-
-    },
-
-    onPlayerPlaybackRateChange: function() {
-      this.trigger('ratechange');
-    },
-
-    onPlayerStateChange: function(e) {
-      var state = e.data;
-
-      if (state === this.lastState || this.errorNumber) {
-        return;
-      }
-
-      this.lastState = state;
-
-      switch (state) {
-        case -1:
-          this.trigger('loadstart');
-          this.trigger('loadedmetadata');
-          this.trigger('durationchange');
-          this.trigger('ratechange');
-          break;
-
-        case YT.PlayerState.ENDED:
-          this.trigger('ended');
-          break;
-
-        case YT.PlayerState.PLAYING:
-          this.trigger('timeupdate');
-          this.trigger('durationchange');
-          this.trigger('playing');
-          this.trigger('play');
-
-          if (this.isSeeking) {
-            this.onSeeked();
-          }
-          break;
-
-        case YT.PlayerState.PAUSED:
-          this.trigger('canplay');
-          if (this.isSeeking) {
-            this.onSeeked();
-          } else {
-            this.trigger('pause');
-          }
-          break;
-
-        case YT.PlayerState.BUFFERING:
-          this.player_.trigger('timeupdate');
-          this.player_.trigger('waiting');
-          break;
-      }
-    },
-
-    onPlayerVolumeChange: function() {
-      this.trigger('volumechange');
-    },
-
-    onPlayerError: function(e) {
-      this.errorNumber = e.data;
-      this.trigger('pause');
-      this.trigger('error');
-    },
-
-    error: function() {
-      var code = 1000 + this.errorNumber; // as smaller codes are reserved
-      switch (this.errorNumber) {
-        case 5:
-          return { code: code, message: 'Error while trying to play the video' };
-
-        case 2:
-        case 100:
-          return { code: code, message: 'Unable to find the video' };
-
-        case 101:
-        case 150:
-          return {
-            code: code,
-            message: 'Playback on other Websites has been disabled by the video owner.'
-          };
-      }
-
-      return { code: code, message: 'YouTube unknown error (' + this.errorNumber + ')' };
-    },
-
-    loadVideoById_: function(id) {
-      var options = {
-        videoId: id
-      };
-      if (this.options_.start) {
-        options.startSeconds = this.options_.start;
-      }
-      if (this.options_.end) {
-        options.endEnd = this.options_.end;
-      }
-      this.ytPlayer.loadVideoById(options);
-    },
-
-    cueVideoById_: function(id) {
-      var options = {
-        videoId: id
-      };
-      if (this.options_.start) {
-        options.startSeconds = this.options_.start;
-      }
-      if (this.options_.end) {
-        options.endEnd = this.options_.end;
-      }
-      this.ytPlayer.cueVideoById(options);
-    },
-
-    src: function(src) {
-      if (src) {
-        this.setSrc({ src: src });
-      }
-
-      return this.source;
-    },
-
-    poster: function() {
-      // You can't start programmaticlly a video with a mobile
-      // through the iframe so we hide the poster and the play button (with CSS)
-      if (_isOnMobile) {
-        return null;
-      }
-
-      return this.poster_;
-    },
-
-    setPoster: function(poster) {
-      this.poster_ = poster;
-    },
-
-    setSrc: function(source) {
-      if (!source || !source.src) {
-        return;
-      }
-
-      delete this.errorNumber;
-      this.source = source;
-      this.url = Youtube.parseUrl(source.src);
-
-      if (!this.options_.poster) {
-        if (this.url.videoId) {
-          // Set the low resolution first
-          this.poster_ = 'https://img.youtube.com/vi/' + this.url.videoId + '/0.jpg';
-          this.trigger('posterchange');
-
-          // Check if their is a high res
-          this.checkHighResPoster();
-        }
-      }
-
-      if (this.options_.autoplay && !_isOnMobile) {
-        if (this.isReady_) {
-          this.play();
-        } else {
-          this.playOnReady = true;
-        }
-      } else if (this.activeVideoId !== this.url.videoId) {
-        if (this.isReady_) {
-          this.cueVideoById_(this.url.videoId);
-          this.activeVideoId = this.url.videoId;
-        } else {
-          this.cueOnReady = true;
-        }
-      }
-    },
-
-    autoplay: function() {
-      return this.options_.autoplay;
-    },
-
-    setAutoplay: function(val) {
-      this.options_.autoplay = val;
-    },
-
-    loop: function() {
-      return this.options_.loop;
-    },
-
-    setLoop: function(val) {
-      this.options_.loop = val;
-    },
-
-    play: function() {
-      if (!this.url || !this.url.videoId) {
-        return;
-      }
-
-      this.wasPausedBeforeSeek = false;
-
-      if (this.isReady_) {
-        if (this.url.listId) {
-          if (this.activeList === this.url.listId) {
-            this.ytPlayer.playVideo();
-          } else {
-            this.ytPlayer.loadPlaylist(this.url.listId);
-            this.activeList = this.url.listId;
-          }
-        }
-
-        if (this.activeVideoId === this.url.videoId) {
-          this.ytPlayer.playVideo();
-        } else {
-          this.loadVideoById_(this.url.videoId);
-          this.activeVideoId = this.url.videoId;
-        }
-      } else {
-        this.trigger('waiting');
-        this.playOnReady = true;
-      }
-    },
-
-    pause: function() {
-      if (this.ytPlayer) {
-        this.ytPlayer.pauseVideo();
-      }
-    },
-
-    paused: function() {
-      return (this.ytPlayer) ?
-        (this.lastState !== YT.PlayerState.PLAYING && this.lastState !== YT.PlayerState.BUFFERING)
-        : true;
-    },
-
-    currentTime: function() {
-      return this.ytPlayer ? this.ytPlayer.getCurrentTime() : 0;
-    },
-
-    setCurrentTime: function(seconds) {
-      if (this.lastState === YT.PlayerState.PAUSED) {
-        this.timeBeforeSeek = this.currentTime();
-      }
-
-      if (!this.isSeeking) {
-        this.wasPausedBeforeSeek = this.paused();
-      }
-
-      this.ytPlayer.seekTo(seconds, true);
-      this.trigger('timeupdate');
-      this.trigger('seeking');
-      this.isSeeking = true;
-
-      // A seek event during pause does not return an event to trigger a seeked event,
-      // so run an interval timer to look for the currentTime to change
-      if (this.lastState === YT.PlayerState.PAUSED && this.timeBeforeSeek !== seconds) {
-        clearInterval(this.checkSeekedInPauseInterval);
-        this.checkSeekedInPauseInterval = setInterval(function() {
-          if (this.lastState !== YT.PlayerState.PAUSED || !this.isSeeking) {
-            // If something changed while we were waiting for the currentTime to change,
-            //  clear the interval timer
-            clearInterval(this.checkSeekedInPauseInterval);
-          } else if (this.currentTime() !== this.timeBeforeSeek) {
-            this.trigger('timeupdate');
-            this.onSeeked();
-          }
-        }.bind(this), 250);
-      }
-    },
-
-    seeking: function () {
-      return this.isSeeking;
-    },
-
-    seekable: function () {
-      if(!this.ytPlayer) {
-        return videojs.createTimeRange();
-      }
-
-      return videojs.createTimeRange(0, this.ytPlayer.getDuration());
-    },
-
-    onSeeked: function() {
-      clearInterval(this.checkSeekedInPauseInterval);
-      this.isSeeking = false;
-
-      if (this.wasPausedBeforeSeek) {
-        this.pause();
-      }
-
-      this.trigger('seeked');
-    },
-
-    playbackRate: function() {
-      return this.ytPlayer ? this.ytPlayer.getPlaybackRate() : 1;
-    },
-
-    setPlaybackRate: function(suggestedRate) {
-      if (!this.ytPlayer) {
-        return;
-      }
-
-      this.ytPlayer.setPlaybackRate(suggestedRate);
-    },
-
-    duration: function() {
-      return this.ytPlayer ? this.ytPlayer.getDuration() : 0;
-    },
-
-    currentSrc: function() {
-      return this.source && this.source.src;
-    },
-
-    ended: function() {
-      return this.ytPlayer ? (this.lastState === YT.PlayerState.ENDED) : false;
-    },
-
-    volume: function() {
-      return this.ytPlayer ? this.ytPlayer.getVolume() / 100.0 : 1;
-    },
-
-    setVolume: function(percentAsDecimal) {
-      if (!this.ytPlayer) {
-        return;
-      }
-
-      this.ytPlayer.setVolume(percentAsDecimal * 100.0);
-    },
-
-    muted: function() {
-      return this.ytPlayer ? this.ytPlayer.isMuted() : false;
-    },
-
-    setMuted: function(mute) {
-      if (!this.ytPlayer) {
-        return;
-      }
-      else{
-        this.muted(true);
-      }
-
-      if (mute) {
-        this.ytPlayer.mute();
-      } else {
-        this.ytPlayer.unMute();
-      }
-      this.setTimeout( function(){
-        this.trigger('volumechange');
-      }, 50);
-    },
-
-    buffered: function() {
-      if(!this.ytPlayer || !this.ytPlayer.getVideoLoadedFraction) {
-        return videojs.createTimeRange();
-      }
-
-      var bufferedEnd = this.ytPlayer.getVideoLoadedFraction() * this.ytPlayer.getDuration();
-
-      return videojs.createTimeRange(0, bufferedEnd);
-    },
-
-    // TODO: Can we really do something with this on YouTUbe?
-    preload: function() {},
-    load: function() {},
-    reset: function() {},
-    networkState: function () {
-      if (!this.ytPlayer) {
-        return 0; //NETWORK_EMPTY
-      }
-      switch (this.ytPlayer.getPlayerState()) {
-        case -1: //unstarted
-          return 0; //NETWORK_EMPTY
-        case 3: //buffering
-          return 2; //NETWORK_LOADING
-        default:
-          return 1; //NETWORK_IDLE
-      }
-    },
-    readyState: function () {
-      if (!this.ytPlayer) {
-        return 0; //HAVE_NOTHING
-      }
-      switch (this.ytPlayer.getPlayerState()) {
-        case -1: //unstarted
-          return 0; //HAVE_NOTHING
-        case 5: //video cued
-          return 1; //HAVE_METADATA
-        case 3: //buffering
-          return 2; //HAVE_CURRENT_DATA
-        default:
-          return 4; //HAVE_ENOUGH_DATA
-      }
-    },
-
-    supportsFullScreen: function() {
-      return document.fullscreenEnabled ||
-             document.webkitFullscreenEnabled ||
-             document.mozFullScreenEnabled ||
-             document.msFullscreenEnabled;
-    },
-
-    // Tries to get the highest resolution thumbnail available for the video
-    checkHighResPoster: function(){
-      var uri = 'https://img.youtube.com/vi/' + this.url.videoId + '/maxresdefault.jpg';
-
-      try {
-        var image = new Image();
-        image.onload = function(){
-          // Onload may still be called if YouTube returns the 120x90 error thumbnail
-          if('naturalHeight' in image){
-            if (image.naturalHeight <= 90 || image.naturalWidth <= 120) {
-              return;
-            }
-          } else if(image.height <= 90 || image.width <= 120) {
-            return;
-          }
-
-          this.poster_ = uri;
-          this.trigger('posterchange');
-        }.bind(this);
-        image.onerror = function(){};
-        image.src = uri;
-      }
-      catch(e){}
-    }
-  });
-
-  Youtube.isSupported = function() {
-    return true;
-  };
-
-  Youtube.canPlaySource = function(e) {
-    return Youtube.canPlayType(e.type);
-  };
-
-  Youtube.canPlayType = function(e) {
-    return (e === 'video/youtube');
-  };
-
-  Youtube.parseUrl = function(url) {
-    var result = {
-      videoId: null
-    };
-
-    var regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    var match = url.match(regex);
-
-    if (match && match[2].length === 11) {
-      result.videoId = match[2];
-    }
-
-    var regPlaylist = /[?&]list=([^#\&\?]+)/;
-    match = url.match(regPlaylist);
-
-    if(match && match[1]) {
-      result.listId = match[1];
-    }
-
-    return result;
-  };
-
-  function apiLoaded() {
-    YT.ready(function() {
-      Youtube.isApiReady = true;
-
-      for (var i = 0; i < Youtube.apiReadyQueue.length; ++i) {
-        Youtube.apiReadyQueue[i].initYTPlayer();
-      }
-    });
-  }
-
-  function loadScript(src, callback) {
-    var loaded = false;
-    var tag = document.createElement('script');
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    tag.onload = function () {
-      if (!loaded) {
-        loaded = true;
-        callback();
-      }
-    };
-    tag.onreadystatechange = function () {
-      if (!loaded && (this.readyState === 'complete' || this.readyState === 'loaded')) {
-        loaded = true;
-        callback();
-      }
-    };
-    tag.src = src;
-  }
-
-  function injectCss() {
-    var css = // iframe blocker to catch mouse events
-              '.vjs-youtube .vjs-iframe-blocker { display: none; }' +
-              '.vjs-youtube.vjs-user-inactive .vjs-iframe-blocker { display: block; }' +
-              '.vjs-youtube .vjs-poster { background-size: cover; }' +
-              '.vjs-youtube-mobile .vjs-big-play-button { display: none; }';
-
-    var head = document.head || document.getElementsByTagName('head')[0];
-
-    var style = document.createElement('style');
-    style.type = 'text/css';
-
-    if (style.styleSheet){
-      style.styleSheet.cssText = css;
-    } else {
-      style.appendChild(document.createTextNode(css));
-    }
-
-    head.appendChild(style);
-  }
-
-  Youtube.apiReadyQueue = [];
-
-  if (typeof document !== 'undefined'){
-    loadScript('https://www.youtube.com/iframe_api', apiLoaded);
-    injectCss();
-  }
-
-  // Older versions of VJS5 doesn't have the registerTech function
-  if (typeof videojs.registerTech !== 'undefined') {
-    videojs.registerTech('Youtube', Youtube);
-  } else {
-    videojs.registerComponent('Youtube', Youtube);
-  }
-}));
-});
-
-var VideoPlayer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(VideoPlayer, _React$Component);
-
-  function VideoPlayer() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, VideoPlayer);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(VideoPlayer)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "videoNode", _this.props.innerRef);
-
-    return _this;
-  }
-
-  _createClass(VideoPlayer, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      // instantiate Video.js
-      this.player = videojs$1(this.videoNode.current, this.props.setup, this.props.onReadyCheck ? function () {
-        return _this2.props.onReadyCheck(_this2);
-      } : undefined);
-      debugger;
-    } // destroy player on unmount
-
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      if (this.player) {
-        this.player.dispose();
-      }
-    } // wrap the player in a div with a `data-vjs-player` attribute
-    // so videojs won't create additional wrapper in the DOM
-    // see https://github.com/videojs/video.js/pull/3856
-
-  }, {
-    key: "render",
-    value: function render() {
-      debugger;
-
-      var _this$props = this.props,
-          setup = _this$props.setup,
-          onReadyCheck = _this$props.onReadyCheck,
-          innerRef = _this$props.innerRef,
-          rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "innerRef"]);
-
-      return React.createElement("div", {
-        "data-vjs-player": true
-      }, React.createElement("video", _extends({}, rest, {
-        ref: this.videoNode
-      })));
-    }
-  }]);
-
-  return VideoPlayer;
-}(React.Component);
-
-_defineProperty(VideoPlayer, "defaultProps", {
-  id: 'vid1',
-  className: 'video-js vjs-default-skin',
-  width: '640',
-  height: '264',
-  setup: {
-    techOrder: ['youtube'],
-    sources: [{
-      type: 'video/youtube',
-      src: 'https://www.youtube.com/watch?v=TeccAtqd5K8'
-    }]
-  },
-  innerRef: React.createRef()
-});
-
-export default VideoPlayer;
-//# sourceMappingURL=index.module.js.map
+export default videojs$1;
+//# sourceMappingURL=chunk-6404bfd3.js.map
