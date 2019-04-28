@@ -15,19 +15,17 @@ class VideoPlayer extends React.Component {
         }
       ]
     },
-    innerRef: React.createRef()
+    innerRef: React.createRef(),
+    accessVideo: () => {}
   };
 
-  videoNode = this.props.innerRef;
-
-  actions = {};
-
+  state = {};
 
   componentDidMount() {
     if (!videojs) {
-      this.setState({ noVideoJs: 'videojs' })
+      this.setState({ noVideoJs: 'videojs' });
     } else if (this.needsYoutube() && !this.hasYoutube()) {
-      this.setState({ noVideoJs: 'youtube' })
+      this.setState({ noVideoJs: 'youtube' });
     } else {
       this.instantiate();
     }
@@ -36,19 +34,21 @@ class VideoPlayer extends React.Component {
   // destroy player on unmount
   componentWillUnmount() {
     if (this.player) {
+      this.props.setVideo(null);
       this.player.dispose();
     }
   }
 
-  needsYoutube = () => this.props.youtube || this.props.setup.techOrder.find(tech => tech.toLowerCase === 'youtube');
+  needsYoutube = () =>
+    this.props.youtube ||
+    this.props.setup.techOrder.find(tech => tech.toLowerCase === 'youtube');
 
-
-  hasYoutube = () => videojs && videojs.getTech('youtube')
+  hasYoutube = () => videojs && videojs.getTech('youtube');
 
   /* TODO
-  * Fallbacks do not currently work
-  * videojs-youtube defaults to a different version of video.js than imported
-  */
+   * Fallbacks do not currently work
+   * videojs-youtube defaults to a different version of video.js than imported
+   */
 
   // videoJsFallback = () => import('video.js').then(this.youtubeFallback);
 
@@ -62,24 +62,24 @@ class VideoPlayer extends React.Component {
 
   instantiate = () => {
     this.player = videojs(
-      this.videoNode.current,
+      this.props.innerRef.current,
       this.props.setup,
       this.props.onReadyCheck ? () => this.props.onReadyCheck(this) : undefined
     );
-    this.mapControls();
+    this.props.accessVideo(this.player);
   };
-
-  mapControls = () => {
-    Object.keys(this.props.controls).forEach(key => {
-      this.player.on([key], this.props.controls[key]);
-    });
-  }
 
   // wrap the player in a div with a `data-vjs-player` attribute
   // so videojs won't create additional wrapper in the DOM
   // see https://github.com/videojs/video.js/pull/3856
   render() {
     const { setup, onReadyCheck, innerRef, controls, ...rest } = this.props;
+    if (this.state.noVideoJs === 'videojs') {
+      return <div>Wheres Videojs?</div>;
+    }
+    if (this.state.noVideoJs === 'youtube') {
+      return <div>Wheres the youtube support</div>;
+    }
     return (
       <div data-vjs-player>
         <video
@@ -87,7 +87,7 @@ class VideoPlayer extends React.Component {
           controls
           preload="auto"
           {...rest}
-          ref={this.videoNode}
+          ref={this.props.innerRef}
         />
       </div>
     );

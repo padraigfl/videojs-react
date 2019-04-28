@@ -27,7 +27,6 @@ Place the following into the head of your html
 
 ...and you should hopefully have something! There is a check build in to make sure but it is quite primitive.
 
-
 As far as controlling the videojs component is concerned, you should be able to do this via the ref value you pass in as a prop following the standard videojs API.
 
 The props I've so far taken note of are:
@@ -37,7 +36,6 @@ The props I've so far taken note of are:
   className
   width
   height
-  innerRef // to allow access to the component from the outside, this has been frustrating for me and I recommend using the controls prop instead where possible
   setup: { // same as the data-setup on in documentation (but a JS object), only used on mount
     techOrder
     sources: [
@@ -53,11 +51,8 @@ The props I've so far taken note of are:
 Extra ones I've added in away from any existing documentation I've seen are
 
 ```
-  controls // pass in the actions to occur when various video js actions are called
-  /*
-    https://docs.videojs.com/docs/api/player.html#Methodson
-    e.g. controls: { pause: () => console.log('paused') } will be placed on player.on('pause', this.controls.pause)
-  */
+  innerRef // to allow access to the DOM for the component from the outside
+  accessVideo // passes the video object out to wherever for manipulation
   youtube // boolean to let the component know if youtube compatibility is to be assured
 ```
 
@@ -68,7 +63,6 @@ To use default videojs styles you must still import their CSS files.
 ## Example
 
 See example implementation in the example folder and play around with it
-
 
 ## Todo
 

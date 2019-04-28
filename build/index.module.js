@@ -156,9 +156,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(VideoPlayer)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_this), "videoNode", _this.props.innerRef);
-
-    _defineProperty(_assertThisInitialized(_this), "actions", {});
+    _defineProperty(_assertThisInitialized(_this), "state", {});
 
     _defineProperty(_assertThisInitialized(_this), "needsYoutube", function () {
       return _this.props.youtube || _this.props.setup.techOrder.find(function (tech) {
@@ -171,17 +169,11 @@ function (_React$Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "instantiate", function () {
-      _this.player = videojs(_this.videoNode.current, _this.props.setup, _this.props.onReadyCheck ? function () {
+      _this.player = videojs(_this.props.innerRef.current, _this.props.setup, _this.props.onReadyCheck ? function () {
         return _this.props.onReadyCheck(_assertThisInitialized(_this));
       } : undefined);
 
-      _this.mapControls();
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "mapControls", function () {
-      Object.keys(_this.props.controls).forEach(function (key) {
-        _this.player.on([key], _this.props.controls[key]);
-      });
+      _this.props.accessVideo(_this.player);
     });
 
     return _this;
@@ -207,6 +199,7 @@ function (_React$Component) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
       if (this.player) {
+        this.props.setVideo(null);
         this.player.dispose();
       }
     }
@@ -223,6 +216,14 @@ function (_React$Component) {
           controls = _this$props.controls,
           rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "innerRef", "controls"]);
 
+      if (this.state.noVideoJs === 'videojs') {
+        return React.createElement("div", null, "Wheres Videojs?");
+      }
+
+      if (this.state.noVideoJs === 'youtube') {
+        return React.createElement("div", null, "Wheres the youtube support");
+      }
+
       return React.createElement("div", {
         "data-vjs-player": true
       }, React.createElement("video", _extends({
@@ -230,7 +231,7 @@ function (_React$Component) {
         controls: true,
         preload: "auto"
       }, rest, {
-        ref: this.videoNode
+        ref: this.props.innerRef
       })));
     }
   }]);
@@ -250,7 +251,8 @@ _defineProperty(VideoPlayer, "defaultProps", {
       src: 'https://www.youtube.com/watch?v=TeccAtqd5K8'
     }]
   },
-  innerRef: React.createRef()
+  innerRef: React.createRef(),
+  accessVideo: function accessVideo() {}
 });
 
 export default VideoPlayer;
