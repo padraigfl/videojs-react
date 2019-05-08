@@ -205,7 +205,7 @@
       key: "componentWillUnmount",
       value: function componentWillUnmount() {
         if (this.player) {
-          this.props.setVideo(null);
+          this.props.accessVideo(null);
           this.player.dispose();
         }
       }
@@ -219,8 +219,9 @@
             setup = _this$props.setup,
             onReadyCheck = _this$props.onReadyCheck,
             innerRef = _this$props.innerRef,
-            controls = _this$props.controls,
-            rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "innerRef", "controls"]);
+            accessVideo = _this$props.accessVideo,
+            className = _this$props.className,
+            rest = _objectWithoutProperties(_this$props, ["setup", "onReadyCheck", "innerRef", "accessVideo", "className"]);
 
         if (this.state.noVideoJs === 'videojs') {
           return React.createElement("div", null, "Wheres Videojs?");
@@ -233,11 +234,11 @@
         return React.createElement("div", {
           "data-vjs-player": true
         }, React.createElement("video", _extends({
-          className: "video-js",
           controls: true,
           preload: "auto"
         }, rest, {
-          ref: this.props.innerRef
+          ref: this.props.innerRef,
+          className: "video-js vjs-default-skin ".concat(className)
         })));
       }
     }]);
@@ -247,9 +248,9 @@
 
   _defineProperty(VideoPlayer, "defaultProps", {
     id: 'vid1',
-    className: 'video-js vjs-default-skin',
-    width: '640',
-    height: '360',
+    className: 'vjs-16-9',
+    // width: '640',
+    // height: '360',
     setup: {
       techOrder: ['youtube'],
       sources: [{

@@ -3,9 +3,9 @@ import React from 'react';
 class VideoPlayer extends React.Component {
   static defaultProps = {
     id: 'vid1',
-    className: 'video-js vjs-default-skin',
-    width: '640',
-    height: '360',
+    className: 'vjs-16-9',
+    // width: '640',
+    // height: '360',
     setup: {
       techOrder: ['youtube'],
       sources: [
@@ -34,7 +34,7 @@ class VideoPlayer extends React.Component {
   // destroy player on unmount
   componentWillUnmount() {
     if (this.player) {
-      this.props.setVideo(null);
+      this.props.accessVideo(null);
       this.player.dispose();
     }
   }
@@ -73,7 +73,14 @@ class VideoPlayer extends React.Component {
   // so videojs won't create additional wrapper in the DOM
   // see https://github.com/videojs/video.js/pull/3856
   render() {
-    const { setup, onReadyCheck, innerRef, controls, ...rest } = this.props;
+    const {
+      setup,
+      onReadyCheck,
+      innerRef,
+      accessVideo,
+      className,
+      ...rest
+    } = this.props;
     if (this.state.noVideoJs === 'videojs') {
       return <div>Wheres Videojs?</div>;
     }
@@ -83,11 +90,11 @@ class VideoPlayer extends React.Component {
     return (
       <div data-vjs-player>
         <video
-          className="video-js"
           controls
           preload="auto"
           {...rest}
           ref={this.props.innerRef}
+          className={`video-js vjs-default-skin ${className}`}
         />
       </div>
     );
